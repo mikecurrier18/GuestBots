@@ -1,20 +1,21 @@
 import React from 'react'
 import Link from 'next/link'
+import Steppers from './CustomizedSteppers'
 
 const Form = ({type, post, setPost, submitting, handleSubmit}) => {
   return (
-    <section className='w-full max-w-full flex-start flex-col'>
+    <section className=' w-full max-w-full flex-center flex-col text-center mb-20'>
       <h1 className='head_text text-left'>
-        <span className='blue_gradient'>{type} Post</span>
+        <span className='blue_gradient'>{type} a bot</span>
         </h1>
-        <p className='desc text-left max-w-md'>{type} and share amazing prompts with the world and let your imagination run wild!</p>
+        <p className='desc text-center max-w-md'>To create a bot for a new property, please provide us with the information below.</p>
     
         <form
         onSubmit={handleSubmit}
         className='mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism'
         >
           <label>
-            <span className='font-satoshi font-semibold text-base text-gray-700'>Enter your link here</span>
+            <span className='font-satoshi font-semibold text-base text-gray-700'>Enter the link to your property's listing on Airbnb</span>
             <textarea 
               value={post.prompt}
               onChange={(e) => setPost({...post, prompt: e.target.value})}
@@ -26,13 +27,13 @@ const Form = ({type, post, setPost, submitting, handleSubmit}) => {
 
           <label>
             <span className='font-satoshi font-semibold text-base text-gray-700'>
-              Tags {' '}
-              <span className='font-normal'>(#this, #is, #an, #example)</span>
+            Enter your phone number
+              <span className='font-normal'></span>
               </span>
             <input 
               value={post.tag}
               onChange={(e) => setPost({...post, tag: e.target.value})}
-              placeholder='#tag'
+              placeholder='Your number...'
               required
               className='form_input'
             />
@@ -48,11 +49,14 @@ const Form = ({type, post, setPost, submitting, handleSubmit}) => {
           disabled={submitting}
           className='px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white'
           >
-            {submitting ? '${type}...' : type}
+            {submitting ? 'Continue' : type}
 
           </button>
             </div>
         </form>
+        <>
+          <Steppers />
+        </>
     </section>
   )
 }

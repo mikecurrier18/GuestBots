@@ -81,6 +81,10 @@
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
 }
 
+.black_btn_lg {
+  @apply rounded-full border border-black bg-black py-1.5 px-10 text-white transition-all hover:bg-white hover:text-black text-center text-3xl font-inter flex items-center justify-center;
+}
+
 .outline_btn {
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
 }
@@ -127,8 +131,9 @@
 }
 
 /* Form Component */
+
 .form_textarea {
-  @apply w-full flex rounded-lg h-[150px] mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply w-full flex rounded-lg h-[75px] mt-2 p-3 text-sm text-gray-500 outline-0;
 }
 
 .form_input {

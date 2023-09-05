@@ -1,4 +1,5 @@
 import Feed from '@components/Feed';
+import StartButton from '@components/StartButton'
 
 const Home = () => {
   return (
@@ -8,9 +9,9 @@ const Home = () => {
             <br className="max-md:hidden" />
             <span className="orange_gradient text-center"> GuestBots</span>
         </h1>
-        <p className="desc text-center">This is just some sample paragraph text to get things lookin nice and pretty</p>
+        <p className="desc text-center">Sign in with your email and create a custom chat bot for your property.</p>
 
-        <Feed />
+        <StartButton />
     </section>
   )
 }
