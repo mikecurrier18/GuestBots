@@ -1,8 +1,12 @@
-import React from 'react'
+'use client';
+
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Steppers from './CustomizedSteppers'
 
 const Form = ({type, post, setPost, submitting, handleSubmit}) => {
+
+
   return (
     <section className=' w-full max-w-full flex-center flex-col text-center mb-20'>
       <h1 className='head_text text-left'>
@@ -54,9 +58,7 @@ const Form = ({type, post, setPost, submitting, handleSubmit}) => {
           </button>
             </div>
         </form>
-        <>
-          <Steppers />
-        </>
+       
     </section>
   )
 }

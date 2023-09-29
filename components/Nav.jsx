@@ -44,7 +44,7 @@ const Nav = () => {
           <Link href="/create-prompt"
           className='black_btn'
           >
-            Create Post
+            Create a bot
           </Link>
 
           <button type='button' onClick={signOut} className='outline_btn'>

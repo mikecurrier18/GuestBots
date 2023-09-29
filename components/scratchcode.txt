@@ -1,0 +1,131 @@
+'use client';
+
+import React, { useState } from 'react'
+import Link from 'next/link'
+import MultiStepForm from './MultiStepForm'
+import { Stepper, Step, StepLabel, Button, Typography } from '@mui/material';
+
+const Form = ({type, post, setPost, submitting, handleSubmit}) => {
+const steps = ['Step 1', 'Step 2', 'Step 3'];
+
+function getStepContent(step) {
+  switch (step) {
+    case 0:
+      return <StepOne />;
+    case 1:
+      return <StepTwo />;
+    case 2:
+      return <StepThree />;
+    default:
+      return 'Unknown step';
+  }
+}
+
+function StepOne() {
+  return(
+    <>
+      <form
+        onSubmit={handleSubmit}
+        className='mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism pt-2'
+        >
+          <label>
+            <span className='font-satoshi font-semibold text-base text-gray-700'>Enter the link to your property's listing on Airbnb</span>
+            <textarea 
+              value={post.prompt}
+              onChange={(e) => setPost({...post, prompt: e.target.value})}
+              placeholder='Your link here...'
+              required
+              className='form_textarea'
+            />
+          </label>
+
+          <label>
+            <span className='font-satoshi font-semibold text-base text-gray-700'>
+            Enter your phone number
+              <span className='font-normal'></span>
+              </span>
+            <input 
+              value={post.tag}
+              onChange={(e) => setPost({...post, tag: e.target.value})}
+              placeholder='Your number...'
+              required
+              className='form_input'
+            />
+          </label>
+
+          <div className='flex-end mx-3 mb-5 gap-4'>
+            <Link href="/" className='text-gray-500 text-sm'>
+              Cancel
+            </Link>
+          
+          <button
+          type="submit"
+          disabled={submitting}
+          className='px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white'
+          >
+            {submitting ? 'Continue' : type}
+
+          </button>
+            </div>
+        </form>
+    </>
+  )
+}
+
+
+  const [activeStep, setActiveStep] = useState(0);
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+
+  return (
+    <section className=' w-full max-w-full flex-center flex-col text-center mb-20'>
+      <h1 className='head_text text-left'>
+        <span className='blue_gradient'>{type} a bot</span>
+        </h1>
+        <p className='desc text-center max-w-md'>To create a bot for a new property, please provide us with the information below.</p>
+    
+
+        
+        <Stepper activeStep={activeStep} alternativeLabel>
+        {steps.map((label) => (
+          <Step key={label}>
+            <StepLabel>{label}</StepLabel>
+          </Step>
+          
+          ))}
+        {activeStep === steps.length ? (
+          <Typography variant="h5">Thank you for submitting the form!</Typography>
+        ) : (
+          <div className='w-full'>
+            <br />
+            
+            {getStepContent(activeStep)}
+            
+            <div>
+              
+              <Button disabled={activeStep === 0} onClick={handleBack}>
+                Back
+              </Button>
+              <Button variant="contained" color="primary" onClick={handleNext}>
+                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+              </Button>
+              
+            </div>
+          </div>
+        )}
+
+      
+      </Stepper>
+        
+    </section>
+  )
+}
+
+export default Form

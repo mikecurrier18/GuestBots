@@ -24,7 +24,7 @@ const [providers, setUpProviders] = useState(null);
     <div>
         {session?.user ? (
           <div className='py-10'>
-            <Link href="/create-bot"
+            <Link href="/simple-multi-step-form"
               className='black_btn_lg'
             >
               Create a bot
