@@ -1,9 +1,10 @@
 import '@styles/globals.css'
 import Nav from '@components/Nav';
 import Provider from '@components/Provider'
+import Footer from '@components/Footer'
 export const metadata = {
-    title: "Site",
-    description: "Learning Next.js"
+    title: "Guestbots.com",
+    description: "Short term property rentals have never been easier with Guestbots"
 }
 
 const RootLayout = ({children}) => {
@@ -20,6 +21,7 @@ const RootLayout = ({children}) => {
                 <Nav />
                 {children}
             </main>
+                <Footer />
             </Provider>
         </body>
     </html>
