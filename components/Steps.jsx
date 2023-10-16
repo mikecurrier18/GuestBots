@@ -75,7 +75,10 @@ const Steps = () => {
                 <h1 className='orange_gradient inline-block max-w-full'><i>Step 3</i></h1>
             </div>
             <div class="text-xl font-semibold text-center">Join the community on Slack</div>
-            <div class="text-sm text-[#636262]">Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam, purus sit.</div>
+            <Link
+                href="/community"
+                className='outline_btn'
+                >Join our Slack</Link>
           </div>
         </div>
       </div>

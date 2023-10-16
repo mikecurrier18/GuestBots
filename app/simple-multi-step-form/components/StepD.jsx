@@ -22,10 +22,9 @@
         <DataConfirmRow label='Pet fee:' value={formData.pet_fee} />
 
         <DataConfirmRow
-          label='Income Per Month:'
-          value={formData.incomePerMonth}
+          label='Extra details:'
+          value={formData.extra_details}
         />
-        <DataConfirmRow label='Tax Percantage:' value={formData.taxPercantage} />
   
         <div className='my-4 flex items-center'>
           <input
@@ -36,12 +35,12 @@
             onChange={(e) => handleChangeInput(e)}
             className='w-4 h-4 mr-2 accent-pink-300 focus:accent-pink-500'
           />
-          <label htmlFor='agreeToTerms'>I Agree to Terms of Services</label>
+          <label htmlFor='agreeToTerms'>I understand that my bot will not work without having set up payments through PayPal.</label>
         </div>
   
         <div className='my-2 flex justify-between items-center'>
           <button
-            className='bg-yellow-400 px-4 py-2 mt-2 rounded-xl'
+            className='bg-gray-400 px-4 py-2 mt-2 rounded-xl'
             onClick={handlePrevStep}
           >
             Prev

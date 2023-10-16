@@ -5,6 +5,8 @@ import StepB from './StepB';
 import StepC from './StepC';
 import StepD from './StepD';
 import StepFinal from './StepFinal';
+import emailjs from '@emailjs/browser';
+
 
 // This is the parent component.
 // This component will control and manage steps and data
@@ -16,6 +18,8 @@ import StepFinal from './StepFinal';
 
 // Step Final: Succes Result
 
+
+
 const initialFormData = {
   paypal_email: '',
   phone: '',
@@ -24,8 +28,7 @@ const initialFormData = {
   checkin_instructions: '',
   pets: '',
   pet_fee: '',
-  incomePerMonth: 0,
-  taxPercantage: 0,
+  extra_details: '',
   agreeToTerms: false,
 };
 
@@ -66,11 +69,20 @@ const SimpleMultiStepForm = ({ showStepNumber }) => {
 
   // We need a method to do final operation
   const handleSubmitFormData = () => {
+    const serviceId = process.env.EMAILJS_SERVICE_ID;
+    const templateId = process.env.EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.EMAILJS_PUBLIC_KEY;
+    const templateParams=formData;
     // Here You can do final Validation and then Submit Your form
     if (!formData.agreeToTerms) {
-      alert('Error!!!!!!   You must agree to Terms of Services!!!!');
+      alert('You must check the box regarding setting up your billing through PayPal.');
     } else {
-      setStep('Final');
+      emailjs.send('service_lr5iz6m', 'template_sxfuch6', templateParams, 'Xartee8rWOBaOzOxs')
+      .then((response)=>{
+        setStep('Final');
+      }).catch((error)=>{
+        alert('There was an issue submitting your bot. Please try again later.')
+      })
     }
   };
 

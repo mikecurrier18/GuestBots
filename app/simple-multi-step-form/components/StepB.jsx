@@ -39,7 +39,7 @@ const StepB = ({
           <textarea
             rows={6}
             required
-            placeholder='ex. "sdfjkdf"'
+            placeholder='Copy these instructions from your listing on Airbnb and paste them here.'
             name='checkin_instructions'
             value={formData.checkin_instructions}
             onChange={(e) => handleChangeInput(e)}
@@ -75,7 +75,7 @@ const StepB = ({
   
         <div className='my-2 flex justify-between items-center'>
           <button
-            className='bg-yellow-400 px-4 py-2 rounded-xl'
+            className='bg-gray-400 px-4 py-2 rounded-xl'
             onClick={handlePrevStep}
           >
             Prev
