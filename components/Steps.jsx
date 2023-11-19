@@ -31,15 +31,14 @@ const Steps = () => {
       <div class="mx-auto w-full max-w-7xl">
         <div class="mx-auto w-full max-w-3xl pb-9">
           <div class="text-center">
-            <h2 class="head_text text-center">Getting started is easy as
-            <br /><span className="orange_gradient text-center"><i>1, 2, 3</i></span>
+            <h2 class="head_text text-center">Getting started is easy as...
             </h2>
           </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-4 lg:gap-6 justify-items-center sm:justify-items-stretch">
           <div class=" grid-cols-1 grid gap-8 border border-solid border-[#dfdfdf] bg-white p-8 md:p-10">
             <div className='head_text text-center'>
-                <h1 className='orange_gradient inline-block max-w-full '><i>Step 1</i></h1>
+                <h1 className='orange_gradient inline-block max-w-full '><i>1</i></h1>
             </div>
             <div class="text-xl font-semibold text-center">Set up billing through PayPal</div>
 
@@ -62,7 +61,7 @@ const Steps = () => {
           </div>
           <div class="grid-cols-1 grid gap-8 border border-solid border-[#dfdfdf] bg-white p-8 md:p-10">
           <div className='head_text text-center'>
-                <h1 className='orange_gradient inline-block max-w-full'><i>Step 2</i></h1>
+                <h1 className='orange_gradient inline-block max-w-full'><i>2</i></h1>
             </div>
             <div class="text-xl font-semibold text-center">Set up a bot unique bot for a property</div>
             <Link
@@ -72,7 +71,7 @@ const Steps = () => {
             </div>
           <div class="grid-cols-1 grid gap-8 border border-solid border-[#dfdfdf] bg-white p-8 md:p-10">
           <div className='head_text text-center'>
-                <h1 className='orange_gradient inline-block max-w-full'><i>Step 3</i></h1>
+                <h1 className='orange_gradient inline-block max-w-full'><i>3</i></h1>
             </div>
             <div class="text-xl font-semibold text-center">Join the community on Slack</div>
             <Link
@@ -91,7 +90,7 @@ const Steps = () => {
          type='button'
          key={provider.name}
          onClick={()=> signIn(provider.id)}
-         className='black_btn_lg'
+         className='black_btn_lg mt-10'
         >
           Sign In
         </button>

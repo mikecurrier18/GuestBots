@@ -5,8 +5,8 @@ import Image from 'next/image'
 const Footer = () => {
   return (
     
-<footer class="px-3 py-8 text-gray-500 glassmorphism text-2 mt-10">
-    <div class="flex flex-col">
+<footer class=" bottom-0 w-full z-10 px-3 py-8 text-gray-500 glassmorphism text-2 mt-10 ">
+    <div class="flex flex-col ">
         <div class="h-px mx-auto rounded-full md:hidden mt-7 w-11">
         </div>
         <div class="flex flex-col mt-4 md:mt-0 md:flex-row">

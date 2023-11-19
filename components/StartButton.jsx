@@ -37,7 +37,7 @@ const [providers, setUpProviders] = useState(null);
                  type='button'
                  key={provider.name}
                  onClick={()=> signIn(provider.id)}
-                 className='black_btn'
+                 className='black_btn mt-16'
                 >
                   Sign In
                 </button>
